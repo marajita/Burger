@@ -1,0 +1,37 @@
+<div class="container">
+    <img id="burger-image" src="https://myrealdomain.com/images/big-mac-clipart-2.png" height="200px" width="200px">
+    <h2 class="heading">Eat-Da-Burger!</h2>
+
+    <div class="burger-div">
+        <ul id="burgers-to-devour">
+            <h3>Burgers to Devour!</h3>
+            {{#each burgers}}
+            {{#unless devoured}}
+            <li>
+                <p>{{id}}. {{burger_name}} <button class="devour" data-burgerid="{{id}}"> Devour it!</button></p>
+            </li>
+            {{/unless}}
+            {{/each}}
+        </ul>
+        <div>
+
+            <div class="burger-div">
+                <ul id="burgers-devoured">
+                    <h3>Burgers Devoured!</h3>
+                    {{#each burgers}}
+                    {{#if devoured}}
+                    <li>
+                        <p>{{id}}. {{burger_name}}</p>
+                    </li>
+                    {{/if}}
+                    {{/each}}
+                </ul>
+            </div>
+
+            <form action="/api/burgers" method="POST">
+                <textarea type="text" name="burger" id="burger-input"></textarea>
+                <p>Enter a burger you want to eat. Then, click the "Add Burger" button.</p>
+                <button type="submit" id="add-burger">Add Burger</button>
+            </form>
+
+        </div>
