@@ -1,37 +1,49 @@
 <div class="container">
-    <img id="burger-image" src="https://myrealdomain.com/images/big-mac-clipart-2.png" height="200px" width="200px">
-    <h2 class="heading">Eat-Da-Burger!</h2>
+    <div class="row">
+        <img id="burger-image" src="https://myrealdomain.com/images/big-mac-clipart-2.png" height="200px" width="200px">
+        <h1 class="heading">Eat-Da-BURGER!</h1>
+    </div>
+    <hr>
 
-    <div class="burger-div">
-        <ul id="burgers-to-devour">
+    <div class="row">
+        <div class="col-md-6">
             <h3>Burgers to Devour!</h3>
-            {{#each burgers}}
-            {{#unless devoured}}
-            <li>
-                <p>{{id}}. {{burger_name}} <button class="devour" data-burgerid="{{id}}"> Devour it!</button></p>
-            </li>
-            {{/unless}}
-            {{/each}}
-        </ul>
-        <div>
+            <ul id="burgers-to-devour">
 
-            <div class="burger-div">
-                <ul id="burgers-devoured">
-                    <h3>Burgers Devoured!</h3>
-                    {{#each burgers}}
-                    {{#if devoured}}
-                    <li>
-                        <p>{{id}}. {{burger_name}}</p>
-                    </li>
-                    {{/if}}
-                    {{/each}}
-                </ul>
-            </div>
-
-            <form action="/api/burgers" method="POST">
-                <textarea type="text" name="burger" id="burger-input"></textarea>
-                <p>Enter a burger you want to eat. Then, click the "Add Burger" button.</p>
-                <button type="submit" id="add-burger">Add Burger</button>
-            </form>
+                {{#each burgers}}
+                {{#unless devoured}}
+                <li> {{this.id}}. {{this.burger_name}}
+                    <!--button in index.handlebars that will submit the user input into the database. -->
+                    <button class="devour" data-burgerid="{{id}}"> Devour it:</button> </li>
+                {{/unless}}
+                {{/each}}
+            </ul>
 
         </div>
+
+        <div class="col-md-6">
+            <ul id="burgers-devoured">
+                <h3>Burgers Devoured:</h3>
+                {{#each burgers}}
+                {{#if this.devoured}}
+                <li> {{this.id}}.{{this.burger_name}}</p>
+                </li>
+                {{/if}}
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+</div>
+
+<br>
+<br>
+
+<form class="burger-form form-inline">
+    <input type="text" name="burger" id="burgerName" class="form-control input-sm"></input>
+    <h4>Click the "Add Burger" button to add the burger you want to eat.</h4>
+    <button type="submit" class="btn btn-lg btn-success" id="add-burger">Add Burger</button>
+
+
+</form>
+
+</div>

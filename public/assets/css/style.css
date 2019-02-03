@@ -1,0 +1,23 @@
+body {
+  background-color: rgb(241, 200, 123);
+}
+.container {
+  background-color: rgb(200, 243, 123);
+}
+
+h1 {
+  text-align: center;
+  color: purple;
+}
+img {
+  margin-left: 480px;
+}
+form {
+  text-align: center;
+}
+
+li {
+  padding: 5px;
+  margin: 5px;
+  background: #faebd7;
+}

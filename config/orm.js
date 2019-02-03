@@ -36,6 +36,7 @@ function objToSql(ob) {
 }
 
 var orm = {
+  // Displaying all burgers in the db.
   selectAll: function(tableInput, cb) {
     var queryString = "SELECT * FROM " + tableInput + ";";
     connection.query(queryString, function(err, result) {
@@ -45,7 +46,7 @@ var orm = {
       cb(result);
     });
   },
-
+  // Adding a burger to the db.
   insertOne: function(table, cols, vals, cb) {
     var queryString = "INSERT INTO " + table;
 
@@ -66,6 +67,8 @@ var orm = {
       cb(result);
     });
   },
+
+  // Set burger devoured status to true.
   updateOne: function(table, objColVals, condition, cb) {
     var queryString = "UPDATE " + table;
 
@@ -80,6 +83,21 @@ var orm = {
         throw err;
       }
 
+      cb(result);
+    });
+  },
+  // Delete a burger from the db.
+  deleteOne: function(table, condition, cb) {
+    var queryString = "DELETE FROM " + table;
+    queryString += " WHERE ";
+    queryString += condition;
+
+    console.log(queryString);
+
+    connection.query(queryString, function(err, result) {
+      if (err) {
+        throw err;
+      }
       cb(result);
     });
   }
