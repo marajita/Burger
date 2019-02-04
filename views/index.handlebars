@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row ">
             <div class="col-md-12">
-                <img id="burger-image" src="https://myrealdomain.com/images/big-mac-clipart-2.png" height="180px" width="200px">
+                <img id="burger-image" src="https://myrealdomain.com/images/big-mac-clipart-2.png">
                 <h1 class="heading">Eat-Da-Burger!</h1>
             </div>
         </div>
@@ -11,10 +11,11 @@
 
 <body>
     <div class="container content">
+
         <form class="burger-form form-inline">
-            <input type="text" name="burger" id="burgerName" class="form-control input-sm"></input>
-            <button type="submit" class="btn btn-lg btn-danger" id="add-burger">Add Burger</button>
-            <h4>Click the "Add Burger" button to add the burger you want to eat.</h4>
+            <input type="text" name="burger" id="burgerName" class="form-control input-lg" placeholder="Burger Name"></input>
+            <button type="submit" class="btn btn-lg btn-danger" id="add-burger">Add</button>
+
 
         </form>
         <br>
@@ -28,7 +29,7 @@
                     {{#unless devoured}}
                     <li> {{this.id}}. {{this.burger_name}}
                         <!--button in index.handlebars that will submit the user input into the database. -->
-                        <button class=" btn btn-info devour" data-burgerid="{{id}}"> Devour it!</button> </li>
+                        <button class="btn btn-info devour" data-burgerid="{{id}}"> Devour it!</button> </li>
                     {{/unless}}
                     {{/each}}
                 </ul>
