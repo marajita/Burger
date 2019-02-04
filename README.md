@@ -8,4 +8,4 @@ The user can enter any burger name to add it to the menu. This adds the new burg
 # Demo
 The demo of the burger eating application can be found here:
 
-![GitHub Logo](../assets/images/burger.mov)
+![GitHub Logo](/images/burger.mov)
