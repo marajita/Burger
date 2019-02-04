@@ -2,8 +2,8 @@
 $(function() {
   $(".devour").on("click", function(event) {
     var id = $(this).data("burgerid");
-    console.log("HAHAHAH");
-    console.log(id);
+    //console.log("HAHAHAH");
+    //console.log(id);
 
     var devoured = 1;
     var newBurgerState = {

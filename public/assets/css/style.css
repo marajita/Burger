@@ -1,23 +1,47 @@
+header {
+  margin-top: 30px;
+  border-bottom: 4px solid #8b7958;
+  background-color: #f4f2ef;
+}
 body {
-  background-color: rgb(241, 200, 123);
+  background: #d6cdc0;
 }
-.container {
-  background-color: rgb(200, 243, 123);
-}
-
 h1 {
   text-align: center;
-  color: purple;
+  color: #453c2c;
+  font-family: fantasy;
+}
+h3 {
+  color: #2e271d;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 30px;
+}
+h4 {
+  font-family: "Gill Sans", "Gill Sans MT", "Calibri", "Trebuchet MS",
+    sans-serif;
+}
+.content {
+  background-color: #fcf9f4;
+  margin-top: 30px;
 }
 img {
-  margin-left: 480px;
+  margin-left: 470px;
+  height: 180px;
+  width: 200px;
 }
 form {
   text-align: center;
+  margin-top: 50px;
 }
 
 li {
   padding: 5px;
   margin: 5px;
-  background: #faebd7;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 18px;
+  background: #f4f2ef;
+}
+
+button {
+  margin-left: 30px;
 }
