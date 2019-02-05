@@ -6,7 +6,16 @@ var connection = mysql.createConnection({
   port: 8889,
   user: "root",
   password: "root",
-  database: "burgers_db"
+  database: "burgers_db",
+  insecureAuth: true,
+  dialect: "mysql",
+  multipleStatements: true,
+  pool: {
+    max: 5,
+    min: 0,
+    acquire: 30000,
+    idle: 10000
+  }
 });
 
 // Make connection.
